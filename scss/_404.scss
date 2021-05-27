@@ -1,0 +1,26 @@
+.not-found {
+  display: block;
+  width: 100vw;
+  margin: 0 auto;
+  color: $blue-dark;
+  & p {
+    color: $blue-dark;
+    font-size: 4rem;
+    &:first-child {
+      margin-top: 4rem;
+    }
+    &:nth-child(2) {
+      margin-bottom: 4rem;
+    }
+  }
+  & a {
+    font-size: 2.5rem;
+    color: $blue-dark;
+  }
+  &__icon {
+    height: 3.5rem;
+    width: 3.5rem;
+    fill: $blue-dark;
+    vertical-align: middle;
+  }
+}

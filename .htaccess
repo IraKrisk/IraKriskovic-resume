@@ -1,0 +1,25 @@
+#non-www. http to www. https
+RewriteCond %{ENV:HTTPS} !on
+RewriteCond %{HTTP_HOST} ^(www\.)?ira-cv\.com$
+RewriteRule (.*) https://www.ira-cv.com/$1 [R=301,L]
+
+#non-www. https to www. https
+RewriteCond %{ENV:HTTPS} on
+RewriteCond %{HTTP_HOST} ^ira-cv\.com$
+RewriteRule (.*) https://www.ira-cv.com/$1 [R=301,L]
+
+## EXPIRES HEADER CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access 1 year"
+ExpiresByType image/svg "access 1 year"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresByType text/html "access 1 month"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/javascript "access 1 month"
+ExpiresByType application/javascript "access 1 month"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES HEADER CACHING ##
+
+ErrorDocument 404 /404.php
